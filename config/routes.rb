@@ -1,4 +1,21 @@
 Igni::Application.routes.draw do
+  resources :days
+
+  resources :months
+
+  resources :weeks
+
+  resources :plans
+
+  resources :periodes
+
+  resources :template_tasks
+
+  resources :plan_tasks
+
+  resources :tasks
+  
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

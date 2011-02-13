@@ -1,0 +1,29 @@
+<h1>Listing plan_tasks</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Position</th>
+    <th>Type</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @plan_tasks.each do |plan_task| %>
+  <tr>
+    <td><%= plan_task.name %></td>
+    <td><%= plan_task.description %></td>
+    <td><%= plan_task.position %></td>
+    <td><%= plan_task.type %></td>
+    <td><%= link_to 'Show', plan_task %></td>
+    <td><%= link_to 'Edit', edit_plan_task_path(plan_task) %></td>
+    <td><%= link_to 'Destroy', plan_task, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Plan task', new_plan_task_path %>

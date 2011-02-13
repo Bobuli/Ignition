@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @plan_task.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @plan_task.description %>
+</p>
+
+<p>
+  <b>Position:</b>
+  <%= @plan_task.position %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%= @plan_task.type %>
+</p>
+
+
+<%= link_to 'Edit', edit_plan_task_path(@plan_task) %> |
+<%= link_to 'Back', plan_tasks_path %>

@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  type: MyString
+  startdate: 2011-02-12
+  plan_id: 1
+  week_id: 1
+  month_id: 1
+
+two:
+  name: MyString
+  type: MyString
+  startdate: 2011-02-12
+  plan_id: 1
+  week_id: 1
+  month_id: 1

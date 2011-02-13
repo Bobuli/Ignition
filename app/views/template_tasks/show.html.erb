@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @template_task.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @template_task.description %>
+</p>
+
+<p>
+  <b>Position:</b>
+  <%= @template_task.position %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%= @template_task.type %>
+</p>
+
+
+<%= link_to 'Edit', edit_template_task_path(@template_task) %> |
+<%= link_to 'Back', template_tasks_path %>

@@ -10,6 +10,27 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 0) do
+ActiveRecord::Schema.define(:version => 20110212165525) do
+
+  create_table "periodes", :force => true do |t|
+    t.string   "name"
+    t.string   "type"
+    t.date     "startdate"
+    t.integer  "plan_id"
+    t.integer  "week_id"
+    t.integer  "month_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tasks", :force => true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.integer  "position"
+    t.string   "type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "periode_id"
+  end
 
 end

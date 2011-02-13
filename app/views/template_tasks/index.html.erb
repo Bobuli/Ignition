@@ -1,0 +1,29 @@
+<h1>Listing template_tasks</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Position</th>
+    <th>Type</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @template_tasks.each do |template_task| %>
+  <tr>
+    <td><%= template_task.name %></td>
+    <td><%= template_task.description %></td>
+    <td><%= template_task.position %></td>
+    <td><%= template_task.type %></td>
+    <td><%= link_to 'Show', template_task %></td>
+    <td><%= link_to 'Edit', edit_template_task_path(template_task) %></td>
+    <td><%= link_to 'Destroy', template_task, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Template task', new_template_task_path %>

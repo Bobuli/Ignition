@@ -2,6 +2,7 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.0.4.rc1'
 
+
 if defined?(JRUBY_VERSION) 
   gem 'activerecord-jdbc-adapter'
   gem 'activerecord-jdbcmysql-adapter'

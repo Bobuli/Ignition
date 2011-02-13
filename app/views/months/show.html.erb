@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @month.name %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%= @month.type %>
+</p>
+
+<p>
+  <b>Startdate:</b>
+  <%= @month.startdate %>
+</p>
+
+<p>
+  <b>Plan:</b>
+  <%= @month.plan_id %>
+</p>
+
+<p>
+  <b>Week:</b>
+  <%= @month.week_id %>
+</p>
+
+<p>
+  <b>Month:</b>
+  <%= @month.month_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_month_path(@month) %> |
+<%= link_to 'Back', months_path %>

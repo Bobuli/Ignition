@@ -1,0 +1,2 @@
+class PlanTask < Task
+end

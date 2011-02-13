@@ -1,0 +1,33 @@
+<h1>Listing weeks</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Startdate</th>
+    <th>Plan</th>
+    <th>Week</th>
+    <th>Month</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @weeks.each do |week| %>
+  <tr>
+    <td><%= week.name %></td>
+    <td><%= week.type %></td>
+    <td><%= week.startdate %></td>
+    <td><%= week.plan_id %></td>
+    <td><%= week.week_id %></td>
+    <td><%= week.month_id %></td>
+    <td><%= link_to 'Show', week %></td>
+    <td><%= link_to 'Edit', edit_week_path(week) %></td>
+    <td><%= link_to 'Destroy', week, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Week', new_week_path %>

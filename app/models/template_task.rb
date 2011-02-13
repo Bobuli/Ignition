@@ -1,0 +1,2 @@
+class TemplateTask < Task
+end
