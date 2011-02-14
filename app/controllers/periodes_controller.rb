@@ -80,67 +80,34 @@ class PeriodesController < ApplicationController
       format.xml  { head :ok }
     end
   end
-  
-  
-  
-  
-  
- # def sort
-
- # 	periodeName = params[:periodeName]
- # 	newPeriodesArray = params[periodeName]
-#	 params.inspect
-#logger.debug "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAaaa"
-#logger.debug newPeriodesArray.inspect
-  	
-#  	@plan = Plan.find(params[:id])
-    #@periode = @plan.find_periode_by_name(periodeName)  	
-  	#tasksList = @periode.tasks
- # 	debug @plan
- #   render :nothing => true
- # end
-  
-   
-
-    
-#     if periodeName != nil && newPeriodesArray != nil
-#      
- #      newPeriodesArray.each do |idx|
-  #      task = Task.find(idx)
- #       if task.is_a?(Templatetask)
-#          @clone = task.clone
-#          @clone.type = "PlanTask"
-  #        @periode.tasks << @clone
- #        
-     #  Task doesn't belog the curent periode, but is still in the plan  
-  #      elsif not tasksList.include?(task)
-   #       @clone = task.dup
-    #      @periode.tasks << @clone
-#        end
- #    
-  #     end
       
-    
-      
-  #    @periode.tasks.each do |task|
- #       if params[periodeName].include?(task.id.to_s)
-#          task.position = params[periodeName].index(task.id.to_s) + 1
-    #      task.save         
-   #     end
-  #    end
- #   
-#    end #periode isnt pool
-    
-  #  end  
- #   render :nothing => true
-#  end
-  
-  
+
   def sort
-    periodeName = params[:periodeName]
-    if periodeName != "pool"
-
-       
+    if params[:periodeId] != "pool"
+    	@periode = Periode.find(params[:periodeId])
+	    plan_tasks_names = Plan.find(params[:planId]).plan_tasks_names
+	   	periodesTaskIdArray = params[params[:periodeId]]
+        	
+    	periodesTaskIdArray.each do |taskId|
+    		task = Task.find(taskId)
+    		if !plan_tasks_names.include?(task.name) && task.is_a?(TemplateTask)			#FIXME?
+    			@clone = task.clone
+          		@clone.type = "PlanTask"
+          		@periode.tasks << @clone
+    		end 
+    		if !@periode.tasks.include?(task) && task.is_a?(PlanTask)
+    		    @periode.tasks << task
+    		end
+    	end	
+       	
+    	#sort the current list
+    	@periode.tasks.each do |task|
+        if periodesTaskIdArray.include?(task.id.to_s)
+          task.position = periodesTaskIdArray.index(task.id.to_s) + 1
+          task.save         
+        end
+      end
+          	       
     end  
     render :nothing => true
   end

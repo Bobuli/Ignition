@@ -10,4 +10,16 @@ class Plan < Periode
     periodes
   end
 
+  def plan_tasks_names
+  	periodeIds = self.periode_names
+  	tasks = []	
+  	periodeIds.each do |periodeId|
+  		tasks += Periode.find(periodeId).tasks.map { |task| task.name }
+  	end
+  	tasks  	
+  end
+  	
+  		
+
+
 end

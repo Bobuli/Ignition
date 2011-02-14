@@ -46,6 +46,8 @@
 </div>		
 
 
+<%=  plan_tasks = Plan.find(1).plan_tasks_names.inspect %>
+
 <!-- Create all sortables-->
 <% periodeIds = @plan.periode_names%>
 <% periodeIds << 'pool' %>
@@ -53,6 +55,6 @@
 	<%= sortable_element(periodeId.to_s,
 		:containment => periodeIds,
 		:dropOnEmpty => true,
-		:url => { :action => 'sort' ,:controller => 'periodes', :periodeId => periodeId, :planid => @plan.id},
+		:url => { :action => 'sort' ,:controller => 'periodes', :periodeId => periodeId, :planId => @plan.id},
 		:complete => visual_effect(:shake,  periodeId.to_s))%>	
 <% end %>
