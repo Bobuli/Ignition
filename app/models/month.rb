@@ -5,7 +5,7 @@ class Month < Periode
   def periode_names
     periodes = []
     self.weeks.each do |periode|
-      periodes << periode.name
+      periodes << periode.id
       periodes += periode.periode_names
     end
     periodes        

@@ -82,22 +82,23 @@ class PeriodesController < ApplicationController
   end
   
   
-  def sort
+  
+  
+  
+ # def sort
 
-	debugger
-  	periodeName = params[:periodeName]
-  	newPeriodesArray = params[periodeName]
-
-puts params.inspect
-puts newPeriodesArray.inspect
+ # 	periodeName = params[:periodeName]
+ # 	newPeriodesArray = params[periodeName]
+#	 params.inspect
+#logger.debug "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAaaa"
+#logger.debug newPeriodesArray.inspect
   	
-  	@plan = Plan.find(params[:id])
+#  	@plan = Plan.find(params[:id])
     #@periode = @plan.find_periode_by_name(periodeName)  	
   	#tasksList = @periode.tasks
-  	
-  	
-    render :nothing => true
-  end
+ # 	debug @plan
+ #   render :nothing => true
+ # end
   
    
 
@@ -135,6 +136,14 @@ puts newPeriodesArray.inspect
 #  end
   
   
-  
-  
+  def sort
+    periodeName = params[:periodeName]
+    if periodeName != "pool"
+
+       
+    end  
+    render :nothing => true
+  end
+
+    
 end

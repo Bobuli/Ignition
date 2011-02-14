@@ -7,7 +7,7 @@ Igni::Application.routes.draw do
 
   resources :plans
 
-  resources :periodes
+ # resources :periodes
 
   resources :template_tasks
 
@@ -15,7 +15,14 @@ Igni::Application.routes.draw do
 
   resources :tasks
   
-
+  resources :periodes do  
+  	collection do  
+   	 post :sort     
+  end
+  end  
+  
+  resources :topics  
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -72,4 +79,5 @@ Igni::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
+  #map.connect ':controller/:action/:id'
 end

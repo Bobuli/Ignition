@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <b>Name:</b>
   <%= @plan.name %>
@@ -13,9 +11,6 @@
   <%= @plan.startdate %>
 </p>
 
-<%= link_to 'Edit', edit_plan_path(@plan) %> |
-<%= link_to 'Back', plans_path %>
-
 
 
 <div id="pool">
@@ -23,55 +18,41 @@
 </div>
 
 
+
 <div id="plan">
 	<% @plan.periodes.each do |month| %>
 		<% month.weeks.each do |week | %>
 			<% week.days.each do |day| %>
-				
-				<!-- Show all Tasks for Day-->
-				<ul id="<%= day.name %>" >
-					<% day.tasks.each do |task|%>
-						<li class="task" id="item_<%=task.id%>">
-							<%=h task.name %><br><%=h task.description %>
-							<%= link_to 'Destroy', task, :method => :delete %>
-						</li>
-					<% end %>	
-				</ul>				
+				<!-- Show Tasks for each Day-->
+				<div id="<%= day.id %>" > 
+					Tag: <%= day.name %>
+					<%= render :partial => day.tasks %>
+				</div>
 			<% end %>
-			
-			<!-- Show all Tasks for Week-->
-			<ul id="<%= week.name %>" >
-				<% week.tasks.each do |task|%>
-					<li class="task" id="item_<%=task.id%>">
-						<%=h task.name %><br><%=h task.description %>
-						<%= link_to 'Destroy', task, :confirm => 'Are you sure?', :method => :delete %>
-					</li>
-				<% end %>	
-			</ul>
-		<% end %>		
-	<% end %>	
+						
+			<!-- Show Tasks for each Week-->
+			<div id="<%= week.id %>" >
+				Woche
+				<%= render :partial => week.tasks  %>	
+			</div>
+		<% end %>
+		
+		<!-- Show Tasks for each Month-->
+		<div id="<%= month.id %>" >
+			Monat
+			<%= render :partial => month.tasks %>	
+		</div>
+	<% end %>
 </div>		
 
 
-
-<% periodeNames = @plan.periode_names %>
-<% periodeNames << "pool" %>
-
-
-<% periodeNames.each do |periodeName| %>
-	<%= sortable_element(periodeName,
-		:containment => periodeNames,
+<!-- Create all sortables-->
+<% periodeIds = @plan.periode_names%>
+<% periodeIds << 'pool' %>
+<% periodeIds.each do |periodeId| %>
+	<%= sortable_element(periodeId.to_s,
+		:containment => periodeIds,
 		:dropOnEmpty => true,
-		:url => { :method => "sort" ,:controller => "periodes", :periodeName => periodeName, :id => @plan.id},
-		:complete => visual_effect(:highlight,  periodeName))%>	
+		:url => { :action => 'sort' ,:controller => 'periodes', :periodeId => periodeId, :planid => @plan.id},
+		:complete => visual_effect(:shake,  periodeId.to_s))%>	
 <% end %>
-
-
-
-
-
-
-
-<br>
-<br>
-

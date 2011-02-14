@@ -4,7 +4,7 @@ class Week < Periode
   	belongs_to :month
   	
   def periode_names
-    self.days.map { |day| day.name }
+    self.days.map { |day| day.id }
   end  
   	
 end

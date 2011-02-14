@@ -1,52 +1,28 @@
 
 #pool{
 	float: left;
-	width: 200px;
-	height: 200px;	
+	width: 250px;
+	height: 250px;	
 	border: dotted;
 	padding: 25px;
 	margin: 25px;
 }
-#cont{
-	overflow: scroll;
-	width: 600px; 
-	height: 100px;	
-	border: dotted;
-}
-#Month1{
-	border:groove;
-}
-
-#Day1, #Day2, #Day3{
-	background-color:#CCCCCC;
-	padding: 10px;
-}
-#Week1, #Week2{
-	padding: 10px;
-	
-}
-.Week1{
-	background-color:maroon;
-	border: double;
-	padding: 0px;
-	margin:10px;	
-}
-
 #plan{
 	float: left;
-	width: 300px;
+	width: 250px;
 	border: dotted;
 	padding: 25px;
 	margin: 25px;	
 }
-.Week2{
-	background-color:#999999;
-	border: dashed;
-	margin: 0px;	
-}
 
+li {
+	list-style-type: none;
+	width: auto;
+}
 
 .task{
   background-color:#262626;
   border:solid;
 }
+
+

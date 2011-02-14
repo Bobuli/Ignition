@@ -4,7 +4,7 @@ class Plan < Periode
   def periode_names
     periodes = []
     self.periodes.each do |periode|
-      periodes << periode.name
+      periodes << periode.id
       periodes += periode.periode_names
     end
     periodes
