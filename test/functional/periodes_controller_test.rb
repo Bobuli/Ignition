@@ -2,7 +2,7 @@ require 'test_helper'
 
 class PeriodesControllerTest < ActionController::TestCase
   setup do
-    @periode = periodes(:one)
+    @periode = periodes(:PeriodeOne)
   end
 
   test "should get index" do

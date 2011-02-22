@@ -2,7 +2,7 @@ require 'test_helper'
 
 class MonthsControllerTest < ActionController::TestCase
   setup do
-    @month = months(:one)
+    @month = periodes(:Januar)
   end
 
   test "should get index" do

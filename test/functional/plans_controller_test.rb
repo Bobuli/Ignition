@@ -2,7 +2,7 @@ require 'test_helper'
 
 class PlansControllerTest < ActionController::TestCase
   setup do
-    @plan = plans(:one)
+    @plan = periodes(:Plan1)
   end
 
   test "should get index" do

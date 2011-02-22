@@ -1,17 +1,34 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  name: MyString
-  type: MyString
+Montag:
+  name: Montag  
+  type: Day
   startdate: 2011-02-12
+  plan_id: 0
+  week_id: 0
+  month_id: 0
+
+Januar:
+  name: januar  
+  type: Month
+  plan_id: 0
+  week_id: 0
+  month_id: 0
+
+KW01:
+  name: KW01
+  type: Week
+  startdate: 2011-01-01
   plan_id: 1
   week_id: 1
   month_id: 1
 
-two:
-  name: MyString
-  type: MyString
+PeriodeOne:
+  name: periodeOne
+  type: Periode
   startdate: 2011-02-12
-  plan_id: 1
-  week_id: 1
-  month_id: 1
+
+Plan1:
+  name: First Plan
+  type: Plan
+  startdate: 2011-02-12

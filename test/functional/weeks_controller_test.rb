@@ -2,7 +2,7 @@ require 'test_helper'
 
 class WeeksControllerTest < ActionController::TestCase
   setup do
-    @week = weeks(:one)
+    @week = periodes(:KW01)
   end
 
   test "should get index" do

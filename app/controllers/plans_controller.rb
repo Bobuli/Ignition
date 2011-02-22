@@ -14,7 +14,7 @@ class PlansController < ApplicationController
   # GET /plans/1.xml
   def show
     @plan = Plan.find(params[:id])
-	@templateTasks = TemplateTask.all
+	  @templateTasks = TemplateTask.all
 	
     respond_to do |format|
       format.html # show.html.erb

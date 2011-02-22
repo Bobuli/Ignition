@@ -2,7 +2,7 @@ require 'test_helper'
 
 class DaysControllerTest < ActionController::TestCase
   setup do
-    @day = days(:one)
+    @day = periodes(:Montag)
   end
 
   test "should get index" do

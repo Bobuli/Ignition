@@ -1,13 +1,19 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  name: MyString
-  description: MyString
+  name: Task1
+  description: Blabla
   position: 1
-  type: MyString
+  type: Task
 
-two:
-  name: MyString
-  description: MyString
+PlanTask1:
+  name: PlanTask1
+  description: hier steht eine Beschreibung...
   position: 1
-  type: MyString
+  type: PlanTask
+
+TemplateTask1:
+  name: TemplateTask1
+  description: kA
+  position: 1
+  type: TemplateTask
