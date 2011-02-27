@@ -1,4 +1,5 @@
 class PlansController < ApplicationController
+require 'plan_drawer'
   # GET /plans
   # GET /plans.xml
   def index
@@ -15,10 +16,14 @@ class PlansController < ApplicationController
   def show
     @plan = Plan.find(params[:id])
 	  @templateTasks = TemplateTask.all
-	
+	 
+    
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @plan }
+      format.pdf  do       
+        send_data PlanDrawer.draw(@plan), :filename => "plan.pdf",:type => "application/pdf", :disposition => 'inline'
+      end 
     end
   end
 
@@ -42,7 +47,8 @@ class PlansController < ApplicationController
   # POST /plans.xml
   def create
     @plan = Plan.new(params[:plan])
-
+    @plan.addInitialPeriodes
+    
     respond_to do |format|
       if @plan.save
         format.html { redirect_to(@plan, :notice => 'Plan was successfully created.') }
@@ -82,7 +88,5 @@ class PlansController < ApplicationController
     end
   end
   
-  
-
   
 end

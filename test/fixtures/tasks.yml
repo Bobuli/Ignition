@@ -7,13 +7,25 @@ one:
   type: Task
 
 PlanTask1:
+  id: 1
   name: PlanTask1
   description: hier steht eine Beschreibung...
   position: 1
   type: PlanTask
+  periode_id: 1
+
+PlanTask2:
+  id: 2
+  name: PlanTask2
+  description: hier steht neue Beschreibung...
+  position: 2
+  type: PlanTask
+  periode_id: 1
 
 TemplateTask1:
   name: TemplateTask1
   description: kA
   position: 1
   type: TemplateTask
+
+  

@@ -12,6 +12,12 @@ class Periode < ActiveRecord::Base
   	end
   	tasks  	
   end
+ 
+  def periode_tasks_names
+    tasks = []  
+    tasks += self.tasks.map { |task| task.name }
+    tasks   
+  end
   
   
 end

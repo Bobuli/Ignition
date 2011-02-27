@@ -85,7 +85,7 @@ class PeriodesController < ApplicationController
   def sort
     if params[:periodeId] != "pool"
     	@periode = Periode.find(params[:periodeId])
-	    plan_tasks_names = Plan.find(params[:planId]).plan_tasks_names
+	    plan_tasks_names = Plan.find(params[:planId]).all_plan_tasks_names
 	   	periodesTaskIdArray = params[params[:periodeId]]
         	
     	periodesTaskIdArray.each do |taskId|

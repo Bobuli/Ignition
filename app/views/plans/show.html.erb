@@ -46,6 +46,7 @@
 </div>		
 
 
+
 <!-- Create all sortables-->
 <% periodeIds = @plan.periode_names%>
 <% periodeIds << 'pool' %>
@@ -56,3 +57,6 @@
 		:url => { :action => 'sort' ,:controller => 'periodes', :periodeId => periodeId, :planId => @plan.id},
 		:complete => visual_effect(:shake,  periodeId.to_s))%>	
 <% end %>
+
+
+<%= link_to 'PDF drucken', plan_path(@plan, :format => :pdf) %>

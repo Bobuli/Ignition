@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.4.rc1'
-
+gem 'pdf-writer'
 
 if defined?(JRUBY_VERSION) 
   gem 'activerecord-jdbc-adapter'

@@ -1,13 +1,14 @@
-/*
-Design by Free CSS Templates
-http://www.freecsstemplates.org
-Released for free under a Creative Commons Attribution 2.5 License
-*/
+main-container {
+    width: 1000px;
+  background: url(/images/back_main3.png) repeat-y;
+  padding-right:0px
+
+}
 
 body {
 	margin: 0;
 	padding: 0;
-	background: #544C40 url(/images/background.gif) repeat left top;
+	background: #544C40 url(/images/back.png) repeat left top;
 	font-family: "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
 	font-size: 13px;
 	color: #FFFFFF;
@@ -59,15 +60,17 @@ img.right {
 #header {
 	width: 1000px;
 	margin: 0 auto;
-	height: 193px;
-	background: url(/images/header2.png) repeat-x left top;
+	height: 245px;
+	/*height: 300px;*/
+	background: url(/images/h2.png) repeat-x left top;
 }
 
 /* Header */
 
 #logo {
 	width: 970px;
-	height: 150px;
+	height: 200px; /*header = same diff*/
+	/*height: 300px;*/
 	margin: 0 auto;
 	padding: 0 10px;
 }
@@ -122,22 +125,22 @@ img.right {
 	float: left;
 	margin: 0 0px 0 0;
 	padding: 5px 15px 10px 20px;
-	border-right: 1px #000000 solid;
+	border-right: 3px #CCCCCC solid;
 	text-decoration: none;
 	text-transform: uppercase;
 	font-family: Arial, Helvetica, sans-serif;
-	font-size: 10px;
-	color: #FFFFFF;
+	font-size: 13px;
+	color: #910629;
 }
 
 #menu a:hover {
 	margin: 0 0px 0 0;
-	color: #FFFFFF;
+	color: #910629;
 }
 
 #menu .current_page_item a {
 	margin: 0 0px 0 0;
-	color: #FFFFFF;
+	color: #910629;
 }
 
 /* Wrapper */
@@ -151,7 +154,8 @@ img.right {
 	width: 1000px;
 	margin: 0 auto;
 	padding: 20px 0 0 0;
-	background: #110E0F;
+	background: #FFFFFF;
+	/*background: #110E0F;*/
 }
 
 #page-bg {
@@ -169,7 +173,7 @@ img.right {
 #content {
 	float: left;
 	width: 760px;
-  color: #FFFFFF
+    color: #000000;
 }
 
 .post {
@@ -185,14 +189,14 @@ img.right {
   margin: 0;
   padding: 10px 0 0 20px;
   font-weight: normal;
-  color: #FFFFFF;
+  color: #000000;
   border-bottom: 2px solid #000000;
   margin: -10px 20px 20px 20px;
 }
 
 .title a {
   border-bottom: none;
-  color: #FFFFFF;
+  color: #000000;
 }
 
 .title a:hover {
@@ -272,7 +276,7 @@ img.right {
 }
 
 .sidebar a {
-	color: #FFFFFF;
+	color: #000000;
 }
 
 /* Search */
@@ -360,7 +364,7 @@ img.right {
 	height: 55px;
 	margin: 0 auto;
 	background: #262626;
-	border-top: 2px solid #B50B0B;
+	border-top: 3px solid #910629;
 }
 
 #footer p {
