@@ -1,10 +1,12 @@
 class PlanDrawer
 require 'pdf/simpletable'
+require 'iconv'
 
   def self.draw(plan)
     pdf = PDF::Writer.new
     pdf.select_font("Helvetica")
-   # pdf.image "public/images/rails.png", :justification => :right, :resize => 0.75
+    
+    # pdf.image "public/images/rails.png", :justification => :right, :resize => 0.75
        
     table = PDF::SimpleTable.new
     table.title = "Sample Tables"
@@ -29,7 +31,7 @@ require 'pdf/simpletable'
     periodeIds.each do |pId|
       p = Periode.find(pId)
       tasks = p.periode_tasks_names
-      tasks = tasks.map { |task| task+"\n"}
+      tasks = tasks.map { |task| task.to_s.to_iso +"\n"}
       dataEntry = { "first"=> p.name, 
                     "second"=> "12:00 ", 
                     "third"=> tasks, 

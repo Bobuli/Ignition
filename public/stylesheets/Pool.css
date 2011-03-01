@@ -2,7 +2,7 @@
 #pool{
 	float: left;
 	width: 250px;
-	height: 250px;	
+	/*height: 250px;*/	
 	border: dotted;
 	padding: 25px;
 	margin: 25px;
@@ -21,7 +21,7 @@ li {
 }
 
 .task{
-  background-color:#262626;
+  background-color:#CCCCCC;
   border:solid;
 }
 

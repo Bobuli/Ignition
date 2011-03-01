@@ -1,0 +1,62 @@
+<p>
+  <b>Name:</b>
+  <%= @plan.name %>
+</p>
+<p>
+  <b>Type:</b>
+  <%= @plan.type %>
+</p>
+<p>
+  <b>Startdate:</b>
+  <%= @plan.startdate %>
+</p>
+
+
+
+<div id="pool">
+	<%= render :partial => @templateTasks %>
+</div>
+
+
+
+<div id="plan">
+	<% @plan.periodes.each do |month| %>
+		<% month.weeks.each do |week | %>
+			<% week.days.each do |day| %>
+				<!-- Show Tasks for each Day-->
+				<div id="<%= day.id %>" > 
+					Tag: <%= day.name %>
+					<%= render :partial => day.tasks %>
+				</div>
+			<% end %>
+						
+			<!-- Show Tasks for each Week-->
+			<div id="<%= week.id %>" >
+				Woche
+				<%= render :partial => week.tasks  %>	
+			</div>
+		<% end %>
+		
+		<!-- Show Tasks for each Month-->
+		<div id="<%= month.id %>" >
+			Monat
+			<%= render :partial => month.tasks %>	
+		</div>
+	<% end %>
+</div>		
+
+
+
+<!-- Create all sortables-->
+<% periodeIds = @plan.periode_names%>
+<% periodeIds << 'pool' %>
+<% periodeIds.each do |periodeId| %>
+	<%= sortable_element(periodeId.to_s,
+		:containment => periodeIds,
+		:dropOnEmpty => true,
+		:url => { :action => 'sort' ,:controller => 'periodes', :periodeId => periodeId, :planId => @plan.id},
+		:complete => visual_effect(:shake,  periodeId.to_s))%>	
+<% end %>
+
+
+<%= link_to 'PDF drucken', plan_path(@plan, :format => :pdf) %>
